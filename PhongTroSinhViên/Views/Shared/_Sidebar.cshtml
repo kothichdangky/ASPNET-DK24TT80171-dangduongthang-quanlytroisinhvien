@@ -1,0 +1,23 @@
+<div class="admin-sidebar">
+
+    <ul class="admin-menu">
+
+        <li class="submenu @(Context.Request.Path == "/Home/Admin" ? "active" : "")">
+
+            <a href="/Home/Admin">
+                Trang chủ
+            </a>
+
+        </li>
+
+        <li class="submenu @(Context.Request.Path == "/Home/Fix" ? "active" : "")">
+
+            <a href="/Home/Fix">
+                Yêu cầu sửa chữa
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>

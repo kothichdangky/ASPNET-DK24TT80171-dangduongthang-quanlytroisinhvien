@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+@Html.Partial(partialViewName: "_PaymentModal")
+
+@Html.Partial(partialViewName: "_InvoiceModal")
+
+<h1 class="title">
+    số phòng trống: 20
+</h1>
+
+<div class="content">
+
+    <div class="carousel">
+
+        <div class="slides">
+
+            <img class="slide active" src="~/img/1.jpg" alt="" />
+            <img class="slide" src="~/img/2.jpg" alt="" />
+            <img class="slide" src="~/img/3.jpg" alt="" />
+            <img class="slide" src="~/img/4.jpg" alt="" />
+            <img class="slide" src="~/img/5.jpg" alt="" />
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div>
+
+            <p class="address">
+                Ấp 18c, xã Tân Bình, đường Tân Kỳ Tân Quý,
+                Quận Bình Tân, TP.HCM
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h4>Rộng</h4>
+                    <h2>200m</h2>
+                </div>
+
+                <div class="stat">
+                    <h4>Gác</h4>
+                    <h2>1</h2>
+                </div>
+
+                <div class="stat">
+                    <h4>Bãi xe</h4>
+                    <h2>1</h2>
+                </div>
+
+            </div>
+
+            <div class="price">
+                1,650,000 đ
+            </div>
+
+            <button class="tour-btn hire">
+                Thuê
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

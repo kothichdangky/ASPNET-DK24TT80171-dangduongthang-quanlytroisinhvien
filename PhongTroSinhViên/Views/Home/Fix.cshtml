@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Fix";
+}
+
+@Html.Partial("_DetailModal")
+
+<div class="admin-layout">
+
+    @Html.Partial("_Sidebar")
+
+    <div class="admin-content">
+
+        <div class="admin-top">
+
+            <div>
+                <h1 class="title">
+                    Yêu cầu sữa chữa
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="admin-filter">
+
+                <input type="text" placeholder="Please enter here" />
+
+                <button class="admin-search-btn">
+                    Search
+                </button>
+
+            </div>
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Số phòng</th>
+                        <th>Người thuê</th>
+                        <th>Vấn đề</th>
+                        <th>Ngày yêu cầu</th>
+                        <th>Tình trạng</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>1</td>
+
+                        <td>Đặng Dương Thắng</td>
+
+                        <td>
+                            <div class="limit-text">
+                                Ống thoát nước nhà tắm bị hỏng,
+                                không hút đc nước,
+                                nên tôi yêu cầu sửa
+                            </div>
+                        </td>
+
+                        <td>10/7/2026</td>
+
+                        <td>
+                            <button class="detail">
+                                Chi tiết
+                            </button>
+
+                            <button>
+                                Đã sửa
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2</td>
+
+                        <td>Đặng Théng</td>
+
+                        <td>
+                            <div class="limit-text">
+                                Ống thoát nước nhà tắm bị hỏng,
+                                không hút đc nước,
+                                nên tôi yêu cầu sửa
+                            </div>
+                        </td>
+
+                        <td>10/7/2026</td>
+
+                        <td>
+                            <button>
+                                Chi tiết
+                            </button>
+
+                            <button>
+                                Đã sửa
+                            </button>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="admin-pagination">
+
+                <button class="active">1</button>
+
+                <button>2</button>
+
+                <button>3</button>
+
+                <button>4</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

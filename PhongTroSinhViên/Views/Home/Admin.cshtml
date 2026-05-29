@@ -1,0 +1,86 @@
+@model List<MyMvcApp.Models.PhongTro>
+@{
+    ViewData["Title"] = "Admin";
+}
+
+@Html.Partial("_SettingModal")
+
+<div class="admin-layout">
+
+    @Html.Partial("_Sidebar")
+
+    <div class="admin-content">
+
+        <div class="admin-top">
+
+            <div>
+                <h1 class="title">Quản lý nhà trọ</h1>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Số phòng</th>
+                        <th>Người thuê</th>
+                        <th>Tiền nước</th>
+                        <th>Tiền điện</th>
+                        <th>Đóng tiền</th>
+                        <th>Tình trạng</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (PhongTro item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Id</td>
+
+                            <td style="color:@(item.NguoiSoHuu != null ? "" : "red")">
+                                @(item.NguoiSoHuu != null
+                                    ? item.NguoiSoHuu.TenNguoiDung
+                                    : "Trống")
+                            </td>
+
+                            <td>@item.LuongNuoc</td>
+
+                            <td>@item.LuongDien</td>
+
+                            <td style="color:@(item.TinhTrangDongTien ? "green" : "red")">
+
+                                @(item.TinhTrangDongTien
+                                    ? "Đã đóng"
+                                    : "Chưa đóng")
+
+                            </td>
+
+                            <td>
+
+                                <button class="setting">
+                                    Chỉnh sửa
+                                </button>
+
+                                <button>
+                                    Xoá
+                                </button>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
