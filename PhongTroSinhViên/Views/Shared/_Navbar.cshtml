@@ -1,13 +1,57 @@
+@using Microsoft.AspNetCore.Http
+@{
+    var tenNguoiDung = Context.Session.GetString("TenNguoiDung");
+    var role = Context.Session.GetString("Role");
+    var phongSoHuu = Context.Session.GetInt32("PhongSoHuu");
+}
 <div class="navbar">
     <div class="logo">Trọ sinh viên</div>
 
-    <ul class="nav-links">
-        <li><a href="/Home/Index">Cho thuê</a></li>
-        <li><a href="/Home/Home">Phòng sở hữu</a></li>
-        <li><a href="/Home/Admin">Admin</a></li>
-    </ul>
+  <ul class="nav-links">
 
-    <div class="nav-right">
-        <button class="login-btn">Đăng nhập</button>
-    </div>
+       @if (role == "Admin" || phongSoHuu == null || phongSoHuu == 0)
+    {
+        <li>
+            <a href="/Home/Index">Cho thuê</a>
+        </li>
+    }
+
+    @if (tenNguoiDung != null && phongSoHuu > 0)
+    {
+        <li>
+            <a href="/Home/Home">Phòng sở hữu</a>
+        </li>
+    }
+
+    @if (role == "Admin")
+    {
+        <li>
+            <a href="/Home/Admin">Admin</a>
+        </li>
+    }
+
+</ul>
+
+   <div class="nav-right">
+
+    @if (tenNguoiDung == null)
+    {
+        <button class="login-btn">
+            Đăng nhập
+        </button>
+    }
+    else
+    {
+        <div class="user-menu">
+            <h3 class="user-name">
+                @tenNguoiDung
+            </h3>
+
+            <div class="user-dropdown">
+                <a href="/Account/Logout">Đăng xuất</a>
+            </div>
+        </div>
+    }
+
+</div>
 </div>

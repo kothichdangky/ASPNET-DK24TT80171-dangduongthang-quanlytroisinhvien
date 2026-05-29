@@ -1,13 +1,37 @@
+@* <div class="modal login-modal">
+    <div class="modal-box">
+        <button class="close-modal">✕</button>
+
+        <h2>Đăng nhập</h2>
+
+        <input type="text" name="TenNguoiDung" placeholder="Tên đăng nhập" />
+
+        <input type="password" name="MatKhau" placeholder="Mật khẩu" />
+
+        <button type="submit" class="modal-login-btn">Đăng nhập</button>
+    </div>
+</div> *@
+
 <div class="modal login-modal">
     <div class="modal-box">
         <button class="close-modal">✕</button>
 
         <h2>Đăng nhập</h2>
 
-        <input type="text" placeholder="Tên đăng nhập" />
+        <form asp-controller="Account" asp-action="Login" method="post" class="modal-form">
 
-        <input type="password" placeholder="Mật khẩu" />
+            <input type="text"
+                   name="TenNguoiDung"
+                   placeholder="Tên đăng nhập" />
 
-        <button class="modal-login-btn">Đăng nhập</button>
+            <input type="password"
+                   name="MatKhau"
+                   placeholder="Mật khẩu" />
+
+            <button type="submit" class="modal-login-btn">
+                Đăng nhập
+            </button>
+
+        </form>
     </div>
 </div>

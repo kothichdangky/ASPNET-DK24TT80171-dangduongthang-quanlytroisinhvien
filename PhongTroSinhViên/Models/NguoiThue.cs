@@ -9,5 +9,10 @@ namespace MyMvcApp.Models
         public int? PhongSoHuu { get; set; }
 
         public DateTime? NgayNhanPhong { get; set; }
+
+        public string? MatKhau { get; set; }
+
+        public string? Role { get; set; }
     }
 }
+

@@ -436,7 +436,6 @@ C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytro
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\scopedcss\bundle\MyMvcApp.styles.css
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\scopedcss\projectbundle\MyMvcApp.bundle.scp.css
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\mv7rr9borb-{0}-b9sayid5wm-b9sayid5wm.gz
-C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\dq791ikggb-{0}-7dg9g3vnui-7dg9g3vnui.gz
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\r42dj9v3f5-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\qlsdvge8p0-{0}-ehmjh09xfr-ehmjh09xfr.gz
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\5vtmfkbc5c-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -512,3 +511,4 @@ C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytro
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\MyMvcApp.pdb
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\MyMvcApp.genruntimeconfig.cache
 C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\ref\MyMvcApp.dll
+C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\obj\Debug\net10.0\compressed\dq791ikggb-{0}-g7b9j9nqr0-g7b9j9nqr0.gz

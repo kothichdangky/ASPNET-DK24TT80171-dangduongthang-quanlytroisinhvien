@@ -1,3 +1,4 @@
+@model MyMvcApp.Models.PhongTro
 @{
     ViewData["Title"] = "Home";
 }
@@ -14,34 +15,35 @@
 
     <div class="card" style="width: 100%">
 
-        <h1 class="title">Phòng 1:</h1>
+        <h1 class="title">Phòng @Model.Id:</h1>
 
         <div>
 
             <p class="address">
-                Ngày chi trả tiếp theo: 27/6/2026
+                Ngày chi trả tiếp theo:
+                @(((DateTime)ViewBag.NgayThuTien).ToString("dd/MM/yyyy"))
             </p>
 
             <div class="stats">
 
                 <div class="stat">
                     <h3>Lượng nước</h3>
-                    <h2>200</h2>
+                    <h2>@Model.LuongNuoc</h2>
                 </div>
 
                 <div class="stat">
                     <h3>Lượng điện</h3>
-                    <h2>200</h2>
+                    <h2>@Model.LuongDien</h2>
                 </div>
 
                 <div class="stat">
                     <h3>Tiền tháng</h3>
-                    <h2>1,650,000 đ</h2>
+                    <h2>@Model.TienHangThang đ</h2>
                 </div>
 
                 <div class="stat">
                     <h3>Tiền đặt cọc</h3>
-                    <h2>500,000 đ</h2>
+                    <h2>@Model.TienDatCoc đ</h2>
                 </div>
 
             </div>
