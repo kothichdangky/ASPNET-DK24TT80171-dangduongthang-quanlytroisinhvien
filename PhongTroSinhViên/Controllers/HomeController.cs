@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MyMvcApp.Data;
 
 namespace MyMvcApp.Controllers
@@ -30,6 +31,7 @@ namespace MyMvcApp.Controllers
 
         public IActionResult Index()
         {
+
             var role = HttpContext.Session.GetString("Role");
             var phongSoHuu = HttpContext.Session.GetInt32("PhongSoHuu");
             var soPhongTrong = _context.PhongTro.Count(x => x.NguoiSoHuuId == null);
@@ -40,7 +42,12 @@ namespace MyMvcApp.Controllers
                 return RedirectToAction("Home");
             }
 
+            var phongTrong = _context.PhongTro
+    .Where(x => x.NguoiSoHuuId == null)
+    .ToList();
+
             ViewBag.SoPhongTrong = soPhongTrong;
+            ViewBag.PhongTrong = phongTrong;
 
             return View();
         }
@@ -83,3 +90,4 @@ namespace MyMvcApp.Controllers
         }
     }
 }
+

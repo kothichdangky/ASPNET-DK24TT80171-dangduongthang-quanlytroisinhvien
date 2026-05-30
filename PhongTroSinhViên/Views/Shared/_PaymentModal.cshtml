@@ -8,30 +8,58 @@
             Vui lòng kiểm tra thông tin trước khi thanh toán.
         </p>
 
-        <div class="bill">
-            <div class="bill-row">
-                <span>Phòng</span>
-                <strong>A01</strong>
+        <form asp-controller="Account"
+              asp-action="ThuePhong"
+              method="post"
+              class="modal-form">
+
+            <input type="text"
+                   name="TenNguoiDung"
+                   placeholder="Tên đăng ký"
+                   autocomplete="off" />
+
+            <input type="password"
+                   name="MatKhau"
+                   placeholder="Mật khẩu" />
+
+            <div class="bill">
+                <div class="bill-row">
+                    <span>Phòng</span>
+
+                    <select id="phongSelect" name="PhongId">
+                        @foreach (var phong in ViewBag.PhongTrong)
+                        {
+                            <option value="@phong.Id"
+                                    data-tienhangthang="@phong.TienHangThang"
+                                    data-tiendatcoc="@phong.TienDatCoc">
+                                @phong.TenPhong
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <div class="bill-row">
+                    <span>Tiền phòng</span>
+                    <strong id="tienPhong"></strong>
+                </div>
+
+                <div class="bill-row">
+                    <span>Tiền cọc</span>
+                    <strong id="tienCoc"></strong>
+                </div>
+
+                <div class="bill-row total">
+                    <span>Tổng cộng</span>
+                    <strong id="tongTien"></strong>
+                </div>
             </div>
 
-            <div class="bill-row">
-                <span>Tiền phòng</span>
-                <strong>1,650,000 đ</strong>
-            </div>
+            <button type="submit"
+                    class="confirm-payment tour-btn">
+                Xác nhận thanh toán
+            </button>
 
-            <div class="bill-row">
-                <span>Tiền cọc</span>
-                <strong>500,000 đ</strong>
-            </div>
+        </form>
 
-            <div class="bill-row total">
-                <span>Tổng cộng</span>
-                <strong>2,150,000 đ</strong>
-            </div>
-        </div>
-
-        <button class="confirm-payment tour-btn">
-            Xác nhận thanh toán
-        </button>
     </div>
 </div>

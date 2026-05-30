@@ -36,6 +36,17 @@ const confirmPayment = document.querySelector(".confirm-payment");
 
 const invoiceBtn = document.querySelector(".invoice-btn");
 
+// room select
+
+const phongSelect = document.getElementById("phongSelect");
+
+const tienPhong = document.getElementById("tienPhong");
+
+const tienCoc = document.getElementById("tienCoc");
+
+const tongTien = document.getElementById("tongTien");
+
+
 //  carousel 
 
 let current = 0;
@@ -210,4 +221,44 @@ if(invoiceBtn){
 
   });
 
+}
+
+
+// Room select
+if (
+  phongSelect &&
+  tienPhong &&
+  tienCoc &&
+  tongTien
+) {
+
+  function capNhatThongTinPhong() {
+
+    const option =
+      phongSelect.options[phongSelect.selectedIndex];
+
+    const tienHangThang =
+      Number(option.dataset.tienhangthang);
+
+    const tienDatCoc =
+      Number(option.dataset.tiendatcoc);
+
+    tienPhong.textContent =
+      tienHangThang.toLocaleString() + " đ";
+
+    tienCoc.textContent =
+      tienDatCoc.toLocaleString() + " đ";
+
+    tongTien.textContent =
+      (tienHangThang + tienDatCoc)
+      .toLocaleString() + " đ";
+
+  }
+
+  phongSelect.addEventListener(
+    "change",
+    capNhatThongTinPhong
+  );
+
+  capNhatThongTinPhong();
 }

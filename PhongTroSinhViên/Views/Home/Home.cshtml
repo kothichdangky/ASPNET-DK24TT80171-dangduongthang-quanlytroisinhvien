@@ -7,7 +7,7 @@
 
 @Html.Partial("_CheckModal")
 
-@Html.Partial("_PaymentModal")
+@* @Html.Partial("_PaymentModal") *@
 
 @Html.Partial("_InvoiceModal")
 
@@ -78,3 +78,20 @@
     </div>
 
 </div>
+@if (TempData["Success"] != null)
+{
+    <script>
+        window.addEventListener("load", function () {
+
+            const invoiceModal =
+                document.querySelector(".invoice-modal");
+
+            if (invoiceModal) {
+
+                invoiceModal.classList.add("active");
+
+            }
+
+        });
+    </script>
+}
