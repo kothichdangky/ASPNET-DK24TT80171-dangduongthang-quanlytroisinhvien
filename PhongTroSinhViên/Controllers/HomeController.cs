@@ -29,6 +29,57 @@ namespace MyMvcApp.Controllers
             return View(phongTro);
         }
 
+        [HttpPost]
+        public IActionResult UpdatePhong(
+            int Id,
+            double LuongNuoc,
+            double LuongDien,
+            decimal TienHangThang,
+            bool TinhTrangDongTien)
+        {
+            var phong = _context.PhongTro
+                .FirstOrDefault(x => x.Id == Id);
+
+            if (phong == null)
+            {
+                return RedirectToAction("Admin");
+            }
+
+            phong.LuongNuoc = LuongNuoc;
+            phong.LuongDien = LuongDien;
+            phong.TienHangThang = TienHangThang;
+            phong.TinhTrangDongTien = TinhTrangDongTien;
+            _context.SaveChanges();
+
+            return RedirectToAction("Admin");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteNguoiThue(int PhongId)
+        {
+            var phong = _context.PhongTro
+                .FirstOrDefault(x => x.Id == PhongId);
+
+            if (phong == null)
+            {
+                return RedirectToAction("Admin");
+            }
+
+            var nguoiThue = _context.NguoiThue
+                .FirstOrDefault(x => x.Id == phong.NguoiSoHuuId);
+
+            if (nguoiThue != null)
+            {
+                _context.NguoiThue.Remove(nguoiThue);
+            }
+
+            phong.NguoiSoHuuId = null;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Admin");
+        }
+
         public IActionResult Index()
         {
 

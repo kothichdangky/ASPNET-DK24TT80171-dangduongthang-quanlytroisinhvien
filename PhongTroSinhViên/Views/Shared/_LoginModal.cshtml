@@ -6,14 +6,15 @@
 
         <form asp-controller="Account" asp-action="Login" method="post" class="modal-form">
 
-            <input type="text"
-                   name="TenNguoiDung"
-                   placeholder="Tên đăng nhập" />
+            <input type="text" name="TenNguoiDung" placeholder="Tên đăng nhập" />
 
-            <input type="password"
-                   name="MatKhau"
-                   placeholder="Mật khẩu" />
-
+            <input type="password" name="MatKhau" placeholder="Mật khẩu" />
+            @if (TempData["LoginError"] != null)
+            {
+                <p style="color:red; margin-bottom:10px;">
+                    @TempData["LoginError"]
+                </p>
+            }
             <button type="submit" class="modal-login-btn">
                 Đăng nhập
             </button>
@@ -21,3 +22,19 @@
         </form>
     </div>
 </div>
+
+@if (TempData["LoginError"] != null)
+{
+    <script>
+        window.addEventListener("load", function () {
+
+            const loginModal =
+                document.querySelector(".login-modal");
+
+            if (loginModal) {
+                loginModal.classList.add("active");
+            }
+
+        });
+    </script>
+}

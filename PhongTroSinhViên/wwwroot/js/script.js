@@ -13,7 +13,7 @@ const settings = document.querySelector(".setting");
 
 const details = document.querySelector(".detail");
 
-//  modals 
+//  modals
 
 const loginModal = document.querySelector(".login-modal");
 
@@ -29,8 +29,7 @@ const settingModal = document.querySelector(".setting-modal");
 
 const detailModal = document.querySelector(".detail-modal");
 
-
-//  buttons 
+//  buttons
 
 const confirmPayment = document.querySelector(".confirm-payment");
 
@@ -46,219 +45,174 @@ const tienCoc = document.getElementById("tienCoc");
 
 const tongTien = document.getElementById("tongTien");
 
-
-//  carousel 
+//  carousel
 
 let current = 0;
 
-function showSlide(index){
+function showSlide(index) {
+  if (!slides[index]) return;
 
-  if(!slides[index]) return;
-
-  slides.forEach(slide=>{
+  slides.forEach((slide) => {
     slide.classList.remove("active");
   });
 
-  dots.forEach(dot=>{
+  dots.forEach((dot) => {
     dot.classList.remove("active");
   });
 
   slides[index].classList.add("active");
 
-  if(dots[index]){
+  if (dots[index]) {
     dots[index].classList.add("active");
   }
-
 }
 
-//  click dots 
+//  click dots
 
-dots.forEach((dot,index)=>{
-
-  dot.addEventListener("click", ()=>{
-
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
     current = index;
 
     showSlide(current);
-
   });
-
 });
 
-//  auto slide 
+//  auto slide
 
-if(slides.length > 0){
-
-  setInterval(()=>{
-
+if (slides.length > 0) {
+  setInterval(() => {
     current++;
 
-    if(current >= slides.length){
+    if (current >= slides.length) {
       current = 0;
     }
 
     showSlide(current);
-
-  },5000);
-
+  }, 2000);
 }
 
-//  open login 
+//  open login
 
-if(loginBtn){
-
-  loginBtn.addEventListener("click", ()=>{
-
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
     loginModal.classList.add("active");
-
   });
-
 }
 
-//  open payment 
+//  open payment
 
-if(hired){
-
-  hired.addEventListener("click", ()=>{
-
+if (hired) {
+  hired.addEventListener("click", () => {
     paymentModal.classList.add("active");
-
   });
-
 }
 
-//  open fix 
+//  open fix
 
-if(requests){
-
-  requests.addEventListener("click", ()=>{
-
+if (requests) {
+  requests.addEventListener("click", () => {
     fixModal.classList.add("active");
-
   });
-
 }
 
-//  open check 
+//  open check
 
-if(checks){
-
-  checks.addEventListener("click", ()=>{
+if (checks) {
+  checks.addEventListener("click", () => {
     checkModal.classList.add("active");
   });
-
 }
 
 //  open setting
 
-if(settings){
-
-  settings.addEventListener("click", ()=>{
+if (settings) {
+  settings.addEventListener("click", () => {
     settingModal.classList.add("active");
   });
-
 }
 
 //  open detail
 
-if(details){
-
-  details.addEventListener("click", ()=>{
+if (details) {
+  details.addEventListener("click", () => {
     detailModal.classList.add("active");
   });
-
 }
 
 //  close modals
 
-document.querySelectorAll(".close-modal").forEach(btn=>{
-
-  btn.addEventListener("click", ()=>{
-
+document.querySelectorAll(".close-modal").forEach((btn) => {
+  btn.addEventListener("click", () => {
     btn.closest(".modal").classList.remove("active");
-
   });
-
 });
 
 //  click outside
 
-document.querySelectorAll(".modal").forEach(modal=>{
-
-  modal.addEventListener("click", (e)=>{
-
-    if(e.target === modal){
-
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       modal.classList.remove("active");
-
     }
-
   });
-
 });
 
 //  confirm payment
 
-if(confirmPayment){
-
-  confirmPayment.addEventListener("click", ()=>{
-
+if (confirmPayment) {
+  confirmPayment.addEventListener("click", () => {
     paymentModal.classList.remove("active");
 
     invoiceModal.classList.add("active");
-
   });
-
 }
 
 //  close invoice
 
-if(invoiceBtn){
-
-  invoiceBtn.addEventListener("click", ()=>{
-
+if (invoiceBtn) {
+  invoiceBtn.addEventListener("click", () => {
     invoiceModal.classList.remove("active");
-
   });
-
 }
 
-
 // Room select
-if (
-  phongSelect &&
-  tienPhong &&
-  tienCoc &&
-  tongTien
-) {
-
+if (phongSelect && tienPhong && tienCoc && tongTien) {
   function capNhatThongTinPhong() {
+    const option = phongSelect.options[phongSelect.selectedIndex];
 
-    const option =
-      phongSelect.options[phongSelect.selectedIndex];
+    const tienHangThang = Number(option.dataset.tienhangthang);
 
-    const tienHangThang =
-      Number(option.dataset.tienhangthang);
+    const tienDatCoc = Number(option.dataset.tiendatcoc);
 
-    const tienDatCoc =
-      Number(option.dataset.tiendatcoc);
+    tienPhong.textContent = tienHangThang.toLocaleString() + " đ";
 
-    tienPhong.textContent =
-      tienHangThang.toLocaleString() + " đ";
+    tienCoc.textContent = tienDatCoc.toLocaleString() + " đ";
 
-    tienCoc.textContent =
-      tienDatCoc.toLocaleString() + " đ";
-
-    tongTien.textContent =
-      (tienHangThang + tienDatCoc)
-      .toLocaleString() + " đ";
-
+    tongTien.textContent = (tienHangThang + tienDatCoc).toLocaleString() + " đ";
   }
 
-  phongSelect.addEventListener(
-    "change",
-    capNhatThongTinPhong
-  );
+  phongSelect.addEventListener("change", capNhatThongTinPhong);
 
   capNhatThongTinPhong();
 }
+
+// setting modal
+document.querySelectorAll(".setting").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("PhongId").value = btn.dataset.id;
+
+    document.getElementById("DeletePhongId").value = btn.dataset.id;
+
+    document.getElementById("TenNguoiThue").value = btn.dataset.ten;
+
+    document.getElementById("LuongNuoc").value = btn.dataset.nuoc;
+
+    document.getElementById("LuongDien").value = btn.dataset.dien;
+
+    document.getElementById("TienHangThang").value = btn.dataset.tien;
+
+    document.getElementById("TinhTrangDongTien").value =
+      btn.dataset.dongtien.toLowerCase();
+    settingModal.classList.add("active");
+  });
+});

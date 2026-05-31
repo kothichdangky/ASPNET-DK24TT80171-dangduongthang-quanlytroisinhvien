@@ -62,14 +62,11 @@
 
                             <td>
 
-                                <button class="setting">
+                                <button class="setting" data-id="@item.Id" data-ten="@(item.NguoiSoHuu?.TenNguoiDung ?? "")"
+                                        data-nuoc="@item.LuongNuoc" data-dien="@item.LuongDien" data-tien="@item.TienHangThang"
+                                        data-dongtien="@item.TinhTrangDongTien.ToString().ToLower()">
                                     Chỉnh sửa
                                 </button>
-
-                                <button>
-                                    Xoá
-                                </button>
-
                             </td>
 
                         </tr>

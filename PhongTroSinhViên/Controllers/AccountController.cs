@@ -21,6 +21,8 @@ namespace MyMvcApp.Controllers
 
             if (user == null)
             {
+                TempData["LoginError"] =
+            "Tên đăng nhập hoặc mật khẩu không đúng";
                 return RedirectToAction("Index", "Home");
             }
 
@@ -48,6 +50,17 @@ namespace MyMvcApp.Controllers
      string MatKhau,
      int PhongId)
         {
+            var daTonTai = _context.NguoiThue
+        .Any(x => x.TenNguoiDung == TenNguoiDung);
+
+            if (daTonTai)
+            {
+                TempData["ThuePhongError"] =
+                    "Tên đăng nhập đã tồn tại";
+
+                return RedirectToAction("Index", "Home");
+            }
+
             var nguoiThue = new NguoiThue
             {
                 TenNguoiDung = TenNguoiDung,

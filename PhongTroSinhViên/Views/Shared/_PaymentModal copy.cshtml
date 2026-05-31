@@ -8,11 +8,19 @@
             Vui lòng kiểm tra thông tin trước khi thanh toán.
         </p>
 
-        <form asp-controller="Account" asp-action="ThuePhong" method="post" class="modal-form">
+        <form asp-controller="Account"
+              asp-action="ThuePhong"
+              method="post"
+              class="modal-form">
 
-            <input type="text" name="TenNguoiDung" placeholder="Tên đăng ký" autocomplete="off" />
+            <input type="text"
+                   name="TenNguoiDung"
+                   placeholder="Tên đăng ký"
+                   autocomplete="off" />
 
-            <input type="password" name="MatKhau" placeholder="Mật khẩu" />
+            <input type="password"
+                   name="MatKhau"
+                   placeholder="Mật khẩu" />
 
             <div class="bill">
                 <div class="bill-row">
@@ -21,7 +29,8 @@
                     <select id="phongSelect" name="PhongId">
                         @foreach (var phong in ViewBag.PhongTrong)
                         {
-                            <option value="@phong.Id" data-tienhangthang="@phong.TienHangThang"
+                            <option value="@phong.Id"
+                                    data-tienhangthang="@phong.TienHangThang"
                                     data-tiendatcoc="@phong.TienDatCoc">
                                 @phong.TenPhong
                             </option>
@@ -44,13 +53,9 @@
                     <strong id="tongTien"></strong>
                 </div>
             </div>
-            @if (TempData["ThuePhongError"] != null)
-            {
-                <p style="color:red;">
-                    @TempData["ThuePhongError"]
-                </p>
-            }
-            <button type="submit" class="confirm-payment tour-btn">
+
+            <button type="submit"
+                    class="confirm-payment tour-btn">
                 Xác nhận thanh toán
             </button>
 
@@ -58,18 +63,3 @@
 
     </div>
 </div>
-@if (TempData["ThuePhongError"] != null)
-{
-    <script>
-        window.addEventListener("load", function () {
-
-            const paymentModal =
-                document.querySelector(".payment-modal");
-
-            if (paymentModal) {
-                paymentModal.classList.add("active");
-            }
-
-        });
-    </script>
-}

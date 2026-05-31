@@ -5,21 +5,53 @@
 
         <h2>điều chỉnh</h2>
 
-        <p>Người thuê</p>
-        <input type="text" placeholder="" />
+        <form asp-controller="Home" asp-action="UpdatePhong" method="post" class="modal-form">
 
-        <p>lượng nước</p>
-        <input type="text" placeholder="lượng nước" />
+            <input type="hidden" name="Id" id="PhongId" />
 
-        <p>lượng điện</p>
-        <input type="text" placeholder="lượng điện" />
+            <p>Người thuê</p>
+            <input type="text" id="TenNguoiThue" disabled />
 
-        <p>đóng tiền</p>
-        <input type="text" disabled placeholder="đã thu" />
+            <p>Lượng nước</p>
+            <input type="text" name="LuongNuoc" id="LuongNuoc" placeholder="lượng nước" />
 
-        <button class="modal-login-btn">
-            Đăng nhập
-        </button>
+            <p>Lượng điện</p>
+            <input type="text" name="LuongDien" id="LuongDien" placeholder="lượng điện" />
+
+            <p>Tiền tháng</p>
+            <input type="text" name="TienHangThang" id="TienHangThang" placeholder="tiền tháng" />
+
+            <div style="display:flex;">
+                <p>Đóng tiền:</p>
+
+                <select name="TinhTrangDongTien" id="TinhTrangDongTien">
+
+                    <option value="true">
+                        Đã đóng
+                    </option>
+
+                    <option value="false">
+                        Chưa đóng
+                    </option>
+
+                </select>
+            </div>
+
+            <button type="submit" class="modal-login-btn">
+                cập nhật
+            </button>
+
+        </form>
+
+        <form asp-controller="Home" asp-action="DeleteNguoiThue" method="post" class="modal-form">
+
+            <input type="hidden" name="PhongId" id="DeletePhongId" />
+
+            <button type="submit" class="modal-login-btn" style="background-color:red;">
+                Xoá người thuê
+            </button>
+
+        </form>
 
     </div>
 </div>
