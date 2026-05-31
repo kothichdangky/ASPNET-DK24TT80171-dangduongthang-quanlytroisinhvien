@@ -75,7 +75,18 @@
                 </tbody>
 
             </table>
+            <div class="admin-pagination">
 
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <button onclick="location.href='?page=@i'" class="@(i == ViewBag.CurrentPage ? "active" : "")">
+
+                        @i
+
+                    </button>
+                }
+
+            </div>
         </div>
 
     </div>

@@ -14,8 +14,11 @@ namespace MyMvcApp.Controllers
             _context = context;
         }
 
-        public IActionResult Admin()
+        public IActionResult Admin(int page = 1)
         {
+            int pageSize = 5;
+
+            int totalRows = _context.PhongTro.Count();
             var role = HttpContext.Session.GetString("Role");
 
             if (role != "Admin")
@@ -23,9 +26,17 @@ namespace MyMvcApp.Controllers
                 return RedirectToAction("Index");
             }
             var phongTro = _context.PhongTro
-                .Include(p => p.NguoiSoHuu)
-                .ToList();
+        .Include(x => x.NguoiSoHuu)
+        .Skip((page - 1) * pageSize)
+        .Take(pageSize)
+        .ToList();
 
+            ViewBag.CurrentPage = page;
+
+            ViewBag.TotalPages =
+                (int)Math.Ceiling(
+                    (double)totalRows / pageSize
+                );
             return View(phongTro);
         }
 
