@@ -1,35 +1,52 @@
 <div class="modal check-modal">
     <div class="check-box modal-box">
 
-        <button class="close-modal">✕</button>
+        <button class="close-modal close">✕</button>
 
         <h2>Hoá đơn hàng tháng</h2>
 
         <div class="bill">
 
-            <div class="bill-row">
-                <span>Date: 10/7/2025</span>
-            </div>
+            @foreach (var hoaDon in ViewBag.HoaDons)
+            {
+                <div class="bill-row">
+                    <span>
+                        Date:
+                        @hoaDon.NgayThanhToan.ToString("dd/MM/yyyy")
+                    </span>
+                </div>
 
-            <div class="bill-row">
-                <span>Tiền: 1,650,000 đ</span>
-                <strong>đã thanh toán</strong>
-            </div>
+                <div class="bill-row">
+                    <span>
+                        Tiền:
+                        @string.Format("{0:N0}", hoaDon.TongTien) đ
+                    </span>
 
-            <div class="bill-row total"></div>
+                    <strong>
+                        Đã thanh toán
+                    </strong>
+                </div>
 
-            <div class="bill-row">
-                <span>Date: 10/6/2025</span>
-            </div>
-
-            <div class="bill-row">
-                <span>Tiền: 1,650,000 đ</span>
-                <strong>đã thanh toán</strong>
-            </div>
+                <div class="bill-row total"></div>
+            }
 
         </div>
+        <div class="admin-pagination">
 
-        <button class="tour-btn">
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+        <button
+            onclick="location.href='/Home/Home?page=@i'"
+            class="@(i == ViewBag.CurrentPage ? "active" : "")">
+
+            @i
+
+        </button>
+    }
+
+</div>
+
+        <button class="tour-btn close">
             Xác nhận thanh toán
         </button>
 

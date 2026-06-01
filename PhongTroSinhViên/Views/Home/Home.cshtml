@@ -9,6 +9,8 @@
 
 @Html.Partial("_InvoiceModal")
 
+@Html.Partial("_PaymentModal2")
+
 <div class="content">
 
     <div class="card" style="width: 100%">
@@ -64,7 +66,10 @@
 
                 <div class="stat">
                     <h4>Thanh toán tiền tháng</h4>
-                    <button class="tour-btn hire">
+                    <button class="tour-btn hire-2" 
+                            data-tienphong="@Model.TienHangThang" 
+                            data-nuoc="@Model.LuongNuoc"
+                            data-dien="@Model.LuongDien">
                         Thanh toán
                     </button>
                 </div>

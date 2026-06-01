@@ -46,9 +46,9 @@ namespace MyMvcApp.Controllers
 
         [HttpPost]
         public IActionResult ThuePhong(
-     string TenNguoiDung,
-     string MatKhau,
-     int PhongId)
+            string TenNguoiDung,
+            string MatKhau,
+            int PhongId)
         {
             var daTonTai = _context.NguoiThue
         .Any(x => x.TenNguoiDung == TenNguoiDung);
@@ -74,12 +74,37 @@ namespace MyMvcApp.Controllers
 
             _context.SaveChanges();
 
+
+
             var phong = _context.PhongTro
                 .FirstOrDefault(x => x.Id == PhongId);
 
             if (phong != null)
             {
                 phong.NguoiSoHuuId = nguoiThue.Id;
+
+                _context.SaveChanges();
+
+                var hoaDon = new HoaDon
+                {
+                    PhongId = phong.Id,
+                    NguoiThueId = nguoiThue.Id,
+                    NgayThanhToan = DateTime.Now,
+                    TongTien = phong.TienHangThang + phong.TienDatCoc
+                };
+
+                _context.HoaDon.Add(hoaDon);
+                _context.SaveChanges();
+
+                TempData["Success"] = true;
+
+                TempData["HoaDonId"] = hoaDon.Id;
+
+                TempData["TenPhong"] = phong.TenPhong;
+
+                TempData["NgayThanhToan"] = DateTime.Now.ToString("dd/MM/yyyy");
+
+                TempData["TongTien"] = hoaDon.TongTien.ToString();
 
                 _context.SaveChanges();
             }
@@ -102,5 +127,56 @@ namespace MyMvcApp.Controllers
             return RedirectToAction("Home", "Home");
         }
 
+
+        [HttpPost]
+        public IActionResult ThanhToanTienThang()
+        {
+            var tenNguoiDung =
+                HttpContext.Session.GetString("TenNguoiDung");
+
+            var user = _context.NguoiThue
+                .FirstOrDefault(x =>
+                    x.TenNguoiDung == tenNguoiDung);
+
+            if (user == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var phong = _context.PhongTro
+                .FirstOrDefault(x =>
+                    x.Id == user.PhongSoHuu);
+
+            if (phong == null)
+            {
+                return RedirectToAction("Home");
+            }
+
+            decimal tongTien =
+                phong.TienHangThang
+                + (decimal)phong.LuongNuoc
+                + (decimal)phong.LuongDien;
+
+            var hoaDon = new HoaDon
+            {
+                PhongId = phong.Id,
+                NguoiThueId = user.Id,
+                NgayThanhToan = DateTime.Now,
+                TongTien = tongTien
+            };
+
+            _context.HoaDon.Add(hoaDon);
+
+            phong.TinhTrangDongTien = true;
+
+            user.NgayNhanPhong =
+                user.NgayNhanPhong.Value.AddMonths(1);
+
+            _context.SaveChanges();
+
+            TempData["Success"] = true;
+
+            return RedirectToAction("Home");
+        }
     }
 }

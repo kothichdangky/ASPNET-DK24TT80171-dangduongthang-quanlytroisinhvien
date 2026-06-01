@@ -5,6 +5,8 @@ const loginBtn = document.querySelector(".login-btn");
 
 const hired = document.querySelector(".hire");
 
+const hired_2 = document.querySelector(".hire-2");
+
 const requests = document.querySelector(".request");
 
 const checks = document.querySelector(".check");
@@ -19,6 +21,8 @@ const loginModal = document.querySelector(".login-modal");
 
 const paymentModal = document.querySelector(".payment-modal");
 
+const paymentModal_2 = document.querySelector(".payment-modal-2");
+
 const fixModal = document.querySelector(".fix-modal");
 
 const checkModal = document.querySelector(".check-modal");
@@ -32,6 +36,8 @@ const detailModal = document.querySelector(".detail-modal");
 //  buttons
 
 const confirmPayment = document.querySelector(".confirm-payment");
+
+const confirmPayment_2 = document.querySelector(".confirm-payment-2");
 
 const invoiceBtn = document.querySelector(".invoice-btn");
 
@@ -107,6 +113,26 @@ if (hired) {
   });
 }
 
+//  open payment 2
+
+if (hired_2) {
+  hired_2.addEventListener("click", () => {
+
+    document.getElementById("tienPhong")
+      .textContent =
+      hired.dataset.tienphong + " đ";
+
+    document.getElementById("luongnuoc")
+      .textContent =
+      hired.dataset.nuoc + " đ";
+
+    document.getElementById("luongdien")
+      .textContent =
+      hired.dataset.dien + " đ";
+    paymentModal_2.classList.add("active");
+  });
+}
+
 //  open fix
 
 if (requests) {
@@ -141,7 +167,7 @@ if (details) {
 
 //  close modals
 
-document.querySelectorAll(".close-modal").forEach((btn) => {
+document.querySelectorAll(".close").forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.closest(".modal").classList.remove("active");
   });
@@ -162,6 +188,14 @@ document.querySelectorAll(".modal").forEach((modal) => {
 if (confirmPayment) {
   confirmPayment.addEventListener("click", () => {
     paymentModal.classList.remove("active");
+
+    invoiceModal.classList.add("active");
+  });
+}
+
+if (confirmPayment_2) {
+  confirmPayment_2.addEventListener("click", () => {
+    paymentModal_2.classList.remove("active");
 
     invoiceModal.classList.add("active");
   });

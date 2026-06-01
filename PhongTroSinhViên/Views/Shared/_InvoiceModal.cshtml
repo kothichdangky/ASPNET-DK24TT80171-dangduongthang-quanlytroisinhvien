@@ -12,27 +12,27 @@
 
             <div class="bill-row">
                 <span>Mã hoá đơn</span>
-                <strong>#HD001</strong>
+                <strong>@TempData["HoaDonId"]</strong>
             </div>
 
             <div class="bill-row">
                 <span>Phòng</span>
-                <strong>A01</strong>
+                <strong>@TempData["TenPhong"]</strong>
             </div>
 
             <div class="bill-row">
                 <span>Ngày thanh toán</span>
-                <strong>27/05/2026</strong>
+                <strong>@TempData["NgayThanhToan"]</strong>
             </div>
 
             <div class="bill-row total">
                 <span>Tổng tiền</span>
-                <strong>2,150,000 đ</strong>
+               <strong>@TempData["TongTien"] đ</strong>
             </div>
 
         </div>
 
-        <button class="tour-btn">
+        <button class="tour-btn close">
             Hoàn tất
         </button>
     </div>

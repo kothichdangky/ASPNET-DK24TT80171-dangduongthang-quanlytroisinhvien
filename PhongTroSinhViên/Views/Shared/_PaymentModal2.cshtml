@@ -1,0 +1,43 @@
+<div class="modal payment-modal-2">
+    <div class="modal-box">
+        <button class="close-modal close">✕</button>
+
+        <h2>Xác nhận thanh toán</h2>
+
+        <p>
+            Vui lòng kiểm tra thông tin trước khi thanh toán.
+        </p>
+
+        <form asp-controller="Account" asp-action="ThanhToanTienThang" method="post" class="modal-form">
+
+            <div class="bill">
+
+                <div class="bill-row">
+                    <span>Tiền phòng</span>
+                    <strong id="tienPhong"> 111</strong>
+                </div>
+
+                <div class="bill-row">
+                    <span>Tiền nước</span>
+                    <strong id="luongnuoc"> 111</strong>
+                </div>
+
+                <div class="bill-row">
+                    <span>Tiền điện</span>
+                    <strong id="luongdien">111</strong>
+                </div>
+
+                <div class="bill-row total">
+                    <span>tổng tiền</span>
+                    <strong id="luongdien">111</strong>
+                </div>
+            </div>
+
+            <button type="submit" class="confirm-payment-2 tour-btn">
+                Xác nhận thanh toán
+            </button>
+
+        </form>
+
+    </div>
+</div>

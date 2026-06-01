@@ -81,9 +81,14 @@ namespace MyMvcApp.Controllers
 
             if (nguoiThue != null)
             {
+                var hoaDons = _context.HoaDon
+                    .Where(x => x.NguoiThueId == nguoiThue.Id)
+                    .ToList();
+
+                _context.HoaDon.RemoveRange(hoaDons);
+
                 _context.NguoiThue.Remove(nguoiThue);
             }
-
             phong.NguoiSoHuuId = null;
 
             _context.SaveChanges();
@@ -105,8 +110,8 @@ namespace MyMvcApp.Controllers
             }
 
             var phongTrong = _context.PhongTro
-    .Where(x => x.NguoiSoHuuId == null)
-    .ToList();
+                .Where(x => x.NguoiSoHuuId == null)
+                .ToList();
 
             ViewBag.SoPhongTrong = soPhongTrong;
             ViewBag.PhongTrong = phongTrong;
@@ -114,35 +119,64 @@ namespace MyMvcApp.Controllers
             return View();
         }
 
-        public IActionResult Home()
+        public IActionResult Home(int page = 1)
         {
-            var tenNguoiDung = HttpContext.Session.GetString("TenNguoiDung");
+            var tenNguoiDung =
+                HttpContext.Session.GetString("TenNguoiDung");
 
             var user = _context.NguoiThue
-                .FirstOrDefault(x => x.TenNguoiDung == tenNguoiDung);
+                .FirstOrDefault(x =>
+                    x.TenNguoiDung == tenNguoiDung);
 
             if (user == null)
             {
                 return RedirectToAction("Index");
             }
 
+            int pageSize = 3;
+
+            var hoaDons = _context.HoaDon
+                .Where(x => x.NguoiThueId == user.Id)
+                .OrderByDescending(x => x.NgayThanhToan)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            int totalRows = _context.HoaDon
+                .Count(x => x.NguoiThueId == user.Id);
+
+            ViewBag.HoaDons = hoaDons;
+
+            ViewBag.CurrentPage = page;
+
+            ViewBag.TotalPages =
+                (int)Math.Ceiling(
+                    (double)totalRows / pageSize
+                );
+
             var phong = _context.PhongTro
-                .FirstOrDefault(x => x.Id == user.PhongSoHuu);
+                .FirstOrDefault(x =>
+                    x.Id == user.PhongSoHuu);
 
             if (phong == null)
             {
                 return RedirectToAction("Index");
             }
 
-            DateTime ngayNhanPhong = user.NgayNhanPhong.Value;
-            DateTime ngayThuTien = ngayNhanPhong;
+            DateTime ngayNhanPhong =
+                user.NgayNhanPhong.Value;
+
+            DateTime ngayThuTien =
+                ngayNhanPhong;
 
             while (ngayThuTien <= DateTime.Today)
             {
-                ngayThuTien = ngayThuTien.AddMonths(1);
+                ngayThuTien =
+                    ngayThuTien.AddMonths(1);
             }
 
-            ViewBag.NgayThuTien = ngayThuTien;
+            ViewBag.NgayThuTien =
+                ngayThuTien;
 
             return View(phong);
         }
