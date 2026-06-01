@@ -67,6 +67,7 @@ namespace MyMvcApp.Controllers
                 MatKhau = MatKhau,
                 PhongSoHuu = PhongId,
                 NgayNhanPhong = DateTime.Now,
+                NgayThuTienTiepTheo = DateTime.Now.AddMonths(1),
                 Role = "User"
             };
 
@@ -140,7 +141,7 @@ namespace MyMvcApp.Controllers
 
             if (user == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             var phong = _context.PhongTro
@@ -149,13 +150,13 @@ namespace MyMvcApp.Controllers
 
             if (phong == null)
             {
-                return RedirectToAction("Home");
+                return RedirectToAction("Home", "Home");
             }
 
             decimal tongTien =
                 phong.TienHangThang
-                + (decimal)phong.LuongNuoc
-                + (decimal)phong.LuongDien;
+                + ((decimal)phong.LuongNuoc * 3500)
+                + ((decimal)phong.LuongDien * 3500);
 
             var hoaDon = new HoaDon
             {
@@ -169,14 +170,28 @@ namespace MyMvcApp.Controllers
 
             phong.TinhTrangDongTien = true;
 
-            user.NgayNhanPhong =
-                user.NgayNhanPhong.Value.AddMonths(1);
+            user.NgayThuTienTiepTheo =
+                user.NgayThuTienTiepTheo.Value.AddMonths(1);
 
             _context.SaveChanges();
 
             TempData["Success"] = true;
 
-            return RedirectToAction("Home");
+            TempData["HoaDonId"] =
+                hoaDon.Id;
+
+            TempData["TenPhong"] =
+                phong.TenPhong;
+
+            TempData["NgayThanhToan"] =
+                hoaDon.NgayThanhToan.ToString("dd/MM/yyyy");
+
+            TempData["TongTien"] =
+                hoaDon.TongTien.ToString("N0");
+
+            return RedirectToAction("Home", "Home");
         }
+
+
     }
 }

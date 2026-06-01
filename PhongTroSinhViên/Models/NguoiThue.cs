@@ -10,6 +10,8 @@ namespace MyMvcApp.Models
 
         public DateTime? NgayNhanPhong { get; set; }
 
+        public DateTime? NgayThuTienTiepTheo { get; set; }
+
         public string? MatKhau { get; set; }
 
         public string? Role { get; set; }

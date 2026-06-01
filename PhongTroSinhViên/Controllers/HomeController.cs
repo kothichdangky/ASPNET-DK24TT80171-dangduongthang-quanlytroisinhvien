@@ -119,7 +119,9 @@ namespace MyMvcApp.Controllers
             return View();
         }
 
-        public IActionResult Home(int page = 1)
+        public IActionResult Home(
+            int page = 1,
+            bool openModal = false)
         {
             var tenNguoiDung =
                 HttpContext.Session.GetString("TenNguoiDung");
@@ -163,23 +165,15 @@ namespace MyMvcApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            DateTime ngayNhanPhong =
-                user.NgayNhanPhong.Value;
-
-            DateTime ngayThuTien =
-                ngayNhanPhong;
-
-            while (ngayThuTien <= DateTime.Today)
-            {
-                ngayThuTien =
-                    ngayThuTien.AddMonths(1);
-            }
-
             ViewBag.NgayThuTien =
-                ngayThuTien;
+                user.NgayThuTienTiepTheo;
+
+            ViewBag.OpenModal =
+                openModal;
 
             return View(phong);
         }
+
         public IActionResult Fix()
         {
             return View();

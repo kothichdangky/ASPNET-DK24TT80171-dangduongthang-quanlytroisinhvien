@@ -117,18 +117,25 @@ if (hired) {
 
 if (hired_2) {
   hired_2.addEventListener("click", () => {
+    const tienPhong = Number(hired_2.dataset.tienphong);
 
-    document.getElementById("tienPhong")
-      .textContent =
-      hired.dataset.tienphong + " đ";
+    const tienNuoc = Number(hired_2.dataset.nuoc) * 3500;
 
-    document.getElementById("luongnuoc")
-      .textContent =
-      hired.dataset.nuoc + " đ";
+    const tienDien = Number(hired_2.dataset.dien) * 3500;
 
-    document.getElementById("luongdien")
-      .textContent =
-      hired.dataset.dien + " đ";
+    const tongTien = tienPhong + tienNuoc + tienDien;
+
+    document.getElementById("tienPhong").textContent =
+      tienPhong.toLocaleString() + " đ";
+
+    document.getElementById("luongnuoc").textContent =
+      tienNuoc.toLocaleString() + " đ";
+
+    document.getElementById("luongdien").textContent =
+      tienDien.toLocaleString() + " đ";
+
+    document.getElementById("tongTienThanhToan").textContent =
+      tongTien.toLocaleString() + " đ";
     paymentModal_2.classList.add("active");
   });
 }

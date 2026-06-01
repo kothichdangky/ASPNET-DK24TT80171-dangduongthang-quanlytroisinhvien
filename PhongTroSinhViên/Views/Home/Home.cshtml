@@ -19,10 +19,20 @@
 
         <div>
 
-            <p class="address">
-                Ngày chi trả tiếp theo:
-                @(((DateTime)ViewBag.NgayThuTien).ToString("dd/MM/yyyy"))
-            </p>
+            @if ((DateTime)ViewBag.NgayThuTien <= DateTime.Today)
+            {
+                <p class="address" style="color:red;">
+                    Đã hết hạn tiền tháng, cần thanh toán gấp !
+                    (@(((DateTime)ViewBag.NgayThuTien).ToString("dd/MM/yyyy")))
+                </p>
+            }
+            else
+            {
+                <p class="address">
+                    Ngày chi trả tiếp theo:
+                    @(((DateTime)ViewBag.NgayThuTien).ToString("dd/MM/yyyy"))
+                </p>
+            }
 
             <div class="stats">
 
@@ -66,9 +76,7 @@
 
                 <div class="stat">
                     <h4>Thanh toán tiền tháng</h4>
-                    <button class="tour-btn hire-2" 
-                            data-tienphong="@Model.TienHangThang" 
-                            data-nuoc="@Model.LuongNuoc"
+                    <button class="tour-btn hire-2" data-tienphong="@Model.TienHangThang" data-nuoc="@Model.LuongNuoc"
                             data-dien="@Model.LuongDien">
                         Thanh toán
                     </button>
@@ -92,6 +100,23 @@
             if (invoiceModal) {
 
                 invoiceModal.classList.add("active");
+
+            }
+
+        });
+    </script>
+}
+@if (ViewBag.OpenModal == true)
+{
+    <script>
+        window.addEventListener("load", function () {
+
+            const checkModal =
+                document.querySelector(".check-modal");
+
+            if (checkModal) {
+
+                checkModal.classList.add("active");
 
             }
 

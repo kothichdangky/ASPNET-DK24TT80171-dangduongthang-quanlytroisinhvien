@@ -33,10 +33,10 @@
         </div>
         <div class="admin-pagination">
 
-    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+   @for (int i = 1; i <= ViewBag.TotalPages; i++)
     {
         <button
-            onclick="location.href='/Home/Home?page=@i'"
+           onclick="location.href='/Home/Home?page=@i&openModal=true'"
             class="@(i == ViewBag.CurrentPage ? "active" : "")">
 
             @i
@@ -47,8 +47,9 @@
 </div>
 
         <button class="tour-btn close">
-            Xác nhận thanh toán
+            Xác nhận
         </button>
 
     </div>
 </div>
+
