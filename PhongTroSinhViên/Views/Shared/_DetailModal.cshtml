@@ -7,18 +7,20 @@
 
         <div class="bill">
             <div class="bill-row">
-                <span>Phòng: 1</span>
-                <span>Date: 10/7/2025</span>
+                <span id="detailPhong"></span>
+                <span id="detailNgay"></span>
             </div>
         </div>
 
-        <textarea rows="4" cols="50">
-Ống thoát nước nhà tắm bị hỏng, không hút đc nước, nên tôi yêu cầu sửa
-        </textarea>
+        <textarea id="detailNoiDung" rows="4" cols="50" disabled></textarea>
+        <form asp-controller="Home" asp-action="DeleteSuaChua" method="post" class="modal-form">
 
-        <button class="modal-login-btn">
-            Xác nhận
-        </button>
+            <input type="hidden" id="detailId" name="Id" />
 
+            <button type="submit" class="modal-login-btn">
+                Đã làm xong
+            </button>
+
+        </form>
     </div>
 </div>

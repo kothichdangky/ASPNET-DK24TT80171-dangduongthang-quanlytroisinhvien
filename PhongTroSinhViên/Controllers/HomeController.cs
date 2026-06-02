@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MyMvcApp.Data;
+using MyMvcApp.Models;
 
 namespace MyMvcApp.Controllers
 {
@@ -174,9 +175,82 @@ namespace MyMvcApp.Controllers
             return View(phong);
         }
 
-        public IActionResult Fix()
+        public IActionResult Fix(int page = 1)
         {
-            return View();
+            int pageSize = 5;
+
+            int totalRows = _context.SuaChua.Count();
+
+            var dsSuaChua = _context.SuaChua
+                .Include(x => x.NguoiThue)
+                .Include(x => x.Phong)
+                .OrderByDescending(x => x.NgayYeuCau)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            ViewBag.CurrentPage = page;
+
+            ViewBag.TotalPages =
+                (int)Math.Ceiling(
+                    (double)totalRows / pageSize
+                );
+
+            return View(dsSuaChua);
+        }
+
+        [HttpPost]
+        public IActionResult RequestSuaChua(string NoiDung)
+        {
+            if (string.IsNullOrWhiteSpace(NoiDung))
+            {
+                TempData["FixError"] =
+                    "Vui lòng nhập nội dung yêu cầu sửa chữa";
+
+                return RedirectToAction("Home");
+            }
+
+            var tenNguoiDung =
+                HttpContext.Session.GetString("TenNguoiDung");
+
+            var user = _context.NguoiThue
+                .FirstOrDefault(x =>
+                    x.TenNguoiDung == tenNguoiDung);
+
+            if (user == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var suaChua = new SuaChua
+            {
+                PhongId = user.PhongSoHuu.Value,
+                NguoiThueId = user.Id,
+                NoiDung = NoiDung,
+                NgayYeuCau = DateTime.Now,
+            };
+
+            _context.SuaChua.Add(suaChua);
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Home");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteSuaChua(int Id)
+        {
+            var suaChua = _context.SuaChua
+                .FirstOrDefault(x => x.Id == Id);
+
+            if (suaChua != null)
+            {
+                _context.SuaChua.Remove(suaChua);
+
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Fix");
         }
     }
 }

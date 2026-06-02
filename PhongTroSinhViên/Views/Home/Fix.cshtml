@@ -1,3 +1,4 @@
+@model List<MyMvcApp.Models.SuaChua>
 @{
     ViewData["Title"] = "Fix";
 }
@@ -40,61 +41,38 @@
 
                 <tbody>
 
-                    <tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
 
-                        <td>1</td>
+                            <td>
+                                @item.PhongId
+                            </td>
 
-                        <td>Đặng Dương Thắng</td>
+                            <td>
+                                @item.NguoiThue?.TenNguoiDung
+                            </td>
 
-                        <td>
-                            <div class="limit-text">
-                                Ống thoát nước nhà tắm bị hỏng,
-                                không hút đc nước,
-                                nên tôi yêu cầu sửa
-                            </div>
-                        </td>
+                            <td>
+                                <div class="limit-text">
+                                    @item.NoiDung
+                                </div>
+                            </td>
 
-                        <td>10/7/2026</td>
+                            <td>
+                                @item.NgayYeuCau.ToString("dd/MM/yyyy")
+                            </td>
 
-                        <td>
-                            <button class="detail">
-                                Chi tiết
-                            </button>
+                            <td>
 
-                            <button>
-                                Đã sửa
-                            </button>
-                        </td>
+                                <button class="detail" data-id="@item.Id" data-phong="@item.PhongId"
+                                        data-ngay="@item.NgayYeuCau.ToString("dd/MM/yyyy")" data-noidung="@item.NoiDung">
+                                    Chi tiết
+                                </button>
+                            </td>
 
-                    </tr>
-
-                    <tr>
-
-                        <td>2</td>
-
-                        <td>Đặng Théng</td>
-
-                        <td>
-                            <div class="limit-text">
-                                Ống thoát nước nhà tắm bị hỏng,
-                                không hút đc nước,
-                                nên tôi yêu cầu sửa
-                            </div>
-                        </td>
-
-                        <td>10/7/2026</td>
-
-                        <td>
-                            <button>
-                                Chi tiết
-                            </button>
-
-                            <button>
-                                Đã sửa
-                            </button>
-                        </td>
-
-                    </tr>
+                        </tr>
+                    }
 
                 </tbody>
 
@@ -102,13 +80,14 @@
 
             <div class="admin-pagination">
 
-                <button class="active">1</button>
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <button onclick="location.href='/Home/Fix?page=@i'" class="@(i == ViewBag.CurrentPage ? "active" : "")">
 
-                <button>2</button>
+                        @i
 
-                <button>3</button>
-
-                <button>4</button>
+                    </button>
+                }
 
             </div>
 

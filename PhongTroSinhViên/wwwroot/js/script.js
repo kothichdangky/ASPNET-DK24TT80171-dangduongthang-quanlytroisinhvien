@@ -166,11 +166,21 @@ if (settings) {
 
 //  open detail
 
-if (details) {
-  details.addEventListener("click", () => {
+document.querySelectorAll(".detail").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("detailPhong").textContent =
+      "Phòng: " + btn.dataset.phong;
+
+    document.getElementById("detailNgay").textContent =
+      "Date: " + btn.dataset.ngay;
+
+    document.getElementById("detailNoiDung").value = btn.dataset.noidung;
+
+    document.getElementById("detailId").value = btn.dataset.id;
+
     detailModal.classList.add("active");
   });
-}
+});
 
 //  close modals
 

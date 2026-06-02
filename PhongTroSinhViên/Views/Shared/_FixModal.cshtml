@@ -4,14 +4,41 @@
 
         <h2>yêu cầu sửa chữa</h2>
 
-        <textarea rows="4" cols="50"></textarea>
+        <form asp-controller="Home" asp-action="RequestSuaChua" method="post" class="modal-form">
 
-        <p class="fix-desc">
-            Ghi đầy đủ và chi tiết về chỗ hư hỏng cần sửa chữa
-        </p>
+            <textarea name="NoiDung" rows="4" cols="50"></textarea>
 
-        <button class="tour-btn">
-            Xác nhận thanh toán
-        </button>
+            <p class="fix-desc">
+                Ghi đầy đủ và chi tiết về chỗ hư hỏng cần sửa chữa
+            </p>
+            @if (TempData["FixError"] != null)
+            {
+                <p style="color:red; margin-bottom:10px;">
+                    @TempData["FixError"]
+                </p>
+            }
+            <button type="submit" class="tour-btn">
+                Gửi yêu cầu
+            </button>
+
+        </form>
     </div>
 </div>
+
+@if (TempData["FixError"] != null)
+{
+    <script>
+        window.addEventListener("load", function () {
+
+            const fixModal =
+                document.querySelector(".fix-modal");
+
+            if (fixModal) {
+
+                fixModal.classList.add("active");
+
+            }
+
+        });
+    </script>
+}

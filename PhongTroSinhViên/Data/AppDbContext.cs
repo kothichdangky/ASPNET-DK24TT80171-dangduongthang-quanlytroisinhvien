@@ -16,5 +16,7 @@ namespace MyMvcApp.Data
         public DbSet<NguoiThue> NguoiThue { get; set; }
 
         public DbSet<HoaDon> HoaDon { get; set; }
+
+        public DbSet<SuaChua> SuaChua { get; set; }
     }
 }
