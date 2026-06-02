@@ -5,6 +5,8 @@
 
 @Html.Partial("_FixModal")
 
+@Html.Partial("_Correct")
+
 @Html.Partial("_CheckModal")
 
 @Html.Partial("_InvoiceModal")
@@ -117,6 +119,24 @@
             if (checkModal) {
 
                 checkModal.classList.add("active");
+
+            }
+
+        });
+    </script>
+}
+
+@if (TempData["FixSuccess"] != null)
+{
+    <script>
+        window.addEventListener("load", function () {
+
+            const correctModal =
+                document.querySelector(".correct-modal");
+
+            if (correctModal) {
+
+                correctModal.classList.add("active");
 
             }
 

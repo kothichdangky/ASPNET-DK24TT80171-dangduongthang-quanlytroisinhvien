@@ -234,6 +234,8 @@ namespace MyMvcApp.Controllers
 
             _context.SaveChanges();
 
+             TempData["FixSuccess"] = true;
+
             return RedirectToAction("Home");
         }
 

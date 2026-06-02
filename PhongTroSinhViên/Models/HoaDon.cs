@@ -10,6 +10,6 @@ namespace MyMvcApp.Models
 
         public DateTime NgayThanhToan { get; set; }
 
-        public decimal TongTien { get; set; }
+        public double TongTien { get; set; }
     }
 }

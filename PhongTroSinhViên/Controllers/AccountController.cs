@@ -46,12 +46,12 @@ namespace MyMvcApp.Controllers
 
         [HttpPost]
         public IActionResult ThuePhong(
-            string TenNguoiDung,
-            string MatKhau,
-            int PhongId)
+      string TenNguoiDung,
+      string MatKhau,
+      int PhongId)
         {
             var daTonTai = _context.NguoiThue
-        .Any(x => x.TenNguoiDung == TenNguoiDung);
+                .Any(x => x.TenNguoiDung == TenNguoiDung);
 
             if (daTonTai)
             {
@@ -75,8 +75,6 @@ namespace MyMvcApp.Controllers
 
             _context.SaveChanges();
 
-
-
             var phong = _context.PhongTro
                 .FirstOrDefault(x => x.Id == PhongId);
 
@@ -91,23 +89,26 @@ namespace MyMvcApp.Controllers
                     PhongId = phong.Id,
                     NguoiThueId = nguoiThue.Id,
                     NgayThanhToan = DateTime.Now,
-                    TongTien = phong.TienHangThang + phong.TienDatCoc
+                    TongTien = (double)(phong.TienHangThang + phong.TienDatCoc)
                 };
 
                 _context.HoaDon.Add(hoaDon);
-                _context.SaveChanges();
-
-                TempData["Success"] = true;
-
-                TempData["HoaDonId"] = hoaDon.Id;
-
-                TempData["TenPhong"] = phong.TenPhong;
-
-                TempData["NgayThanhToan"] = DateTime.Now.ToString("dd/MM/yyyy");
-
-                TempData["TongTien"] = hoaDon.TongTien.ToString();
 
                 _context.SaveChanges();
+
+                TempData["HoaDonId"] =
+                    hoaDon.Id;
+
+                TempData["TenPhong"] =
+                    phong.TenPhong;
+
+                TempData["NgayThanhToan"] =
+                    hoaDon.NgayThanhToan
+                        .ToString("dd/MM/yyyy");
+
+                TempData["TongTien"] =
+                    hoaDon.TongTien
+                        .ToString("N0");
             }
 
             HttpContext.Session.SetString(
@@ -124,7 +125,9 @@ namespace MyMvcApp.Controllers
                 "PhongSoHuu",
                 nguoiThue.PhongSoHuu ?? 0
             );
+
             TempData["Success"] = true;
+
             return RedirectToAction("Home", "Home");
         }
 
@@ -163,7 +166,7 @@ namespace MyMvcApp.Controllers
                 PhongId = phong.Id,
                 NguoiThueId = user.Id,
                 NgayThanhToan = DateTime.Now,
-                TongTien = tongTien
+                TongTien = (double)tongTien
             };
 
             _context.HoaDon.Add(hoaDon);
