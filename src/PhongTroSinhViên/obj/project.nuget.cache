@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SH+Ck1TZcuE=",
+  "dgSpecHash": "mb2F+mgt8CQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\PhongTroSinhVien\\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\\PhongTroSinhViên\\MyMvcApp.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\PhongTroSinhVien\\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\\src\\PhongTroSinhViên\\MyMvcApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

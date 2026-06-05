@@ -12,101 +12,101 @@ build_property.EntryPointFilePath =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyMvcApp
 build_property.RootNamespace = MyMvcApp
-build_property.ProjectDir = C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên\
+build_property.ProjectDir = C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\src\PhongTroSinhViên\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\PhongTroSinhViên
+build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\PhongTroSinhVien\ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien\src\PhongTroSinhViên
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Home/Admin.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Home/Fix.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Home/Fix.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Home/Home.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Home/Index.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Home/Privacy.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/Error.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_CheckModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_CheckModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVja01vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_Correct.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_Correct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db3JyZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_DetailModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_DetailModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EZXRhaWxNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_FixModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_FixModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GaXhNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_InvoiceModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_InvoiceModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbnZvaWNlTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_LoginModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_LoginModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbk1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_Navbar.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_PaymentModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_PaymentModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXltZW50TW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_PaymentModal2.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_PaymentModal2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXltZW50TW9kYWwyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_SettingModal.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_SettingModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZXR0aW5nTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_Sidebar.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_Sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/User/Index.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/_ViewImports.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/_ViewStart.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/PhongTroSinhViên/Views/Shared/_Layout.cshtml]
+[C:/Users/PC/Desktop/PhongTroSinhVien/ASPNET-DK24TT80171-dangduongthang-quanlytroisinhvien/src/PhongTroSinhViên/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ujr1yed5n4
